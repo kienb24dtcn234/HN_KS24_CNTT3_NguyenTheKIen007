@@ -18,6 +18,7 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok'
     implementation platform('org.springframework.ai:spring-ai-bom:2.0.1')
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
+    implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
     implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
     implementation 'org.springframework.ai:spring-ai-vector-store-advisor'
     implementation 'org.springframework.ai:spring-ai-starter-mcp-client'
