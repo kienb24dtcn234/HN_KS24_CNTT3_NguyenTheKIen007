@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  ai:
+    openai:
+      base-url: ${OPENAI_BASE_URL}
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: ${OPENAI_CHAT_MODEL}
+      embedding:
+        options:
+          model: ${OPENAI_EMBEDDING_MODEL}
+    vectorstore:
+      pgvector:
+        table-name: ${PGVECTOR_TABLE_NAME}
+        dimensions: ${EMBEDDING_DIMENSIONS}
+        distance-type: COSINE_DISTANCE
+        initialize-schema: false
+langfuse:
+  host: ${LANGFUSE_HOST:http://localhost:3000}
+  public-key: ${LANGFUSE_PUBLIC_KEY}
+  secret-key: ${LANGFUSE_SECRET_KEY}
+mcp:
+  antigravity:
+    enabled: ${MCP_ANTIGRAVITY_ENABLED:false}
+    endpoint: ${MCP_ANTIGRAVITY_ENDPOINT:}
+    token: ${MCP_ANTIGRAVITY_TOKEN:}
