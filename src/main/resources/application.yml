@@ -23,6 +23,21 @@ langfuse:
   public-key: ${LANGFUSE_PUBLIC_KEY:}
   secret-key: ${LANGFUSE_SECRET_KEY:}
   host: ${LANGFUSE_HOST:http://localhost:3000}
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
+    otlp:
+      tracing:
+        endpoint: http://localhost:3000/api/public/otel/v1/traces
+        headers:
+          Authorization: cGstbGYteHh4eDpzay1sZi14eHh4
+  spring:
+    ai:
+      chat:
+        client:
+          observations:
+            include-input: true
 
 mcp:
   antigravity:
